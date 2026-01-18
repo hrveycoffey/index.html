@@ -3,317 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOONKAT | Zero Night Aesthetic</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Noto+Sans+JP:wght@900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    
+    <title>Moonkat | The Dark Side of the Moon</title>
     <style>
+        /* --- ESTILOS BASE MOONKAT --- */
         :root {
-            --primary-red: #ff0000;
-            --deep-black: #050505;
-            --pure-black: #000000;
-            --text-gray: #444;
-            --white: #ffffff;
-        }
-
-        /* --- Estética Base --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            cursor: none; /* Ocultamos cursor real para el personalizado */
+            --negro-puro: #000000;
+            --negro-mate: #0a0a0a;
+            --rojo-sangre: #FF0000;
+            --blanco-puro: #ffffff;
+            --gris-texto: #aaaaaa;
         }
 
         body {
-            background-color: var(--pure-black);
-            color: var(--white);
-            font-family: 'Space Grotesk', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            background-color: var(--negro-puro);
+            color: var(--blanco-puro);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
         }
 
-        /* --- Cursor Custom (Premium Feel) --- */
-        #cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-red);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-        }
-
-        /* --- Navegación Invisible que aparece al Hover --- */
-        nav {
-            position: fixed;
+        /* --- HEADER & NAVEGACIÓN --- */
+        header {
+            background-color: var(--negro-puro);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--rojo-sangre);
+            position: sticky;
             top: 0;
-            width: 100%;
-            padding: 40px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             z-index: 1000;
         }
 
-        .logo {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            letter-spacing: 10px;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: var(--white);
-            transition: 0.5s;
-        }
-
-        .logo:hover { color: var(--primary-red); letter-spacing: 15px; }
-
-        .menu-btn {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            margin: 0;
             text-transform: uppercase;
-            border-bottom: 1px solid var(--primary-red);
-            padding-bottom: 5px;
         }
 
-        /* --- Hero Section (Cinematográfica) --- */
+        .logo-sub {
+            color: var(--rojo-sangre);
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rojo-sangre);
+        }
+
+        /* --- SECCIÓN HERO (IMPACTO) --- */
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,1)),
-                        url('https://images.unsplash.com/photo-1514467953090-45b6e060e751?q=80&w=1600&auto=format&fit=crop');
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2040&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
+            border-bottom: 1px solid #222;
         }
 
-        .hero-title {
-            font-family: 'Syncopate', sans-serif;
-            font-size: clamp(4rem, 15vw, 12rem);
-            line-height: 0.8;
+        .hero h2 {
+            font-size: 4.5rem;
+            color: var(--rojo-sangre);
+            margin: 0;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            margin-top: 10px;
+        }
+
+        /* --- PRODUCTOS --- */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
             text-align: center;
-            z-index: 2;
-        }
-
-        .hero-jp {
-            position: absolute;
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 20vw;
-            color: rgba(255, 0, 0, 0.05);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 40px;
-            font-size: 0.6rem;
-            letter-spacing: 5px;
+            color: var(--rojo-sangre);
+            font-size: 2rem;
+            margin-bottom: 50px;
             text-transform: uppercase;
-            animation: bounce 2s infinite;
+            letter-spacing: 3px;
         }
 
-        /* --- Secciones de Contenido --- */
-        section {
-            padding: 150px 5%;
-            position: relative;
-        }
-
-        .section-tag {
-            font-size: 0.7rem;
-            color: var(--primary-red);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .reveal-text {
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-family: 'Syncopate', sans-serif;
-            max-width: 900px;
-            line-height: 1.1;
-        }
-
-        /* --- Product Grid (Minimalismo Radical) --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 100px 40px;
-            margin-top: 100px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .product-card {
+            background: var(--negro-mate);
+            border: 1px solid #1a1a1a;
+            padding: 0;
+            text-align: center;
+            transition: 0.4s;
             position: relative;
             overflow: hidden;
         }
 
-        .img-container {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: #111;
-            overflow: hidden;
-            position: relative;
+        .product-card:hover {
+            border-color: var(--rojo-sangre);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
         }
 
-        .img-container img {
+        .product-card img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(1);
-            transition: 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .product-card:hover img {
-            transform: scale(1.1);
-            filter: grayscale(0) brightness(0.8);
+            height: auto;
+            display: block;
         }
 
         .product-info {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            padding: 25px;
         }
 
-        .product-name {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 1.2rem;
+        .product-info h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .price {
+            color: var(--rojo-sangre);
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            background-color: var(--rojo-sangre);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            width: 80%;
         }
 
-        .product-price {
-            color: var(--primary-red);
-            font-weight: 700;
+        .btn-buy:hover {
+            background-color: var(--blanco-puro);
+            color: var(--negro-puro);
         }
 
-        /* --- Footer --- */
-        footer {
-            padding: 100px 5%;
-            background: #000;
-            border-top: 1px solid #111;
+        /* --- SOBRE NOSOTROS --- */
+        .about-section {
+            background-color: #050505;
+            padding: 100px 20px;
+            border-top: 1px solid #1a1a1a;
             text-align: center;
         }
 
-        .wa-contact {
-            display: inline-block;
-            margin-top: 50px;
-            font-family: 'Syncopate', sans-serif;
-            font-size: 2rem;
-            color: var(--white);
-            text-decoration: none;
-            border-bottom: 2px solid var(--primary-red);
+        .about-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+            text-align: left;
+        }
+
+        .about-item h4 {
+            color: var(--rojo-sangre);
+            text-transform: uppercase;
+            border-left: 3px solid var(--rojo-sangre);
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* --- INFO ADICIONAL --- */
+        .info-bar {
+            padding: 60px 20px;
+            background: var(--negro-puro);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-box {
+            border: 1px dashed #333;
+            padding: 30px;
+        }
+
+        /* --- WHATSAPP --- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--rojo-sangre);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            z-index: 9999;
             transition: 0.3s;
         }
 
-        .wa-contact:hover {
-            color: var(--primary-red);
-            padding-left: 20px;
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--blanco-puro);
         }
 
-        /* --- Animaciones --- */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+        .whatsapp-btn svg {
+            fill: white;
+            width: 35px;
         }
 
+        .whatsapp-btn:hover svg {
+            fill: var(--rojo-sangre);
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            background: #000;
+            border-top: 1px solid #1a1a1a;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVO */
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 4rem; }
-            #cursor { display: none; }
-            * { cursor: auto; }
+            .logo-text { font-size: 2.2rem; }
+            .hero h2 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div id="cursor"></div>
-
-    <nav>
-        <a href="#" class="logo">MOONKAT</a>
-        <div class="menu-btn">COLLECTION 2026</div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-jp">ムーンカット</div>
-        <h1 class="hero-title">MOON<br>KAT</h1>
-        <div class="scroll-hint">Desliza hacia el vacío</div>
+    <header>
+        <div class="logo-text">MOONKAT</div>
+        <div class="logo-sub">THE DARK SIDE OF THE MOON</div>
+        <nav>
+            <a href="#productos">Colección</a>
+            <a href="#sobre-nosotros">Manifiesto</a>
+            <a href="#info">Info & Envíos</a>
+        </nav>
     </header>
 
-    <section id="about">
-        <span class="section-tag">// ORIGEN</span>
-        <h2 class="reveal-text">CONSTRUIDO EN LA OSCURIDAD. DISEÑADO PARA EL SILENCIO.</h2>
-        <p style="margin-top: 40px; max-width: 500px; color: #888; font-weight: 300; line-height: 2;">
-            Moonkat no es moda. Es un uniforme para la noche urbana. Cada costura está pensada para desaparecer en las sombras, dejando solo la silueta de quien la porta.
-        </p>
+    <section class="hero">
+        <p>ムーンキャット</p>
+        <h2>DROP 01: ECLIPSE RED</h2>
+        <p>EDICIÓN LIMITADA | PARAGUAY</p>
+        <a href="#productos" class="btn-buy" style="margin-top: 30px; width: auto;">Explorar Armadura</a>
     </section>
 
-    <section id="shop">
-        <span class="section-tag">// CATALOG_01</span>
+    <div class="container" id="productos">
+        <h2 class="section-title">Nuevos Artefactos</h2>
         <div class="grid">
             <div class="product-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800" alt="Remera Moonkat">
-                </div>
+                <img src="https://i.ibb.co/b38c81/image.jpg" alt="Moonkat Frontal">
                 <div class="product-info">
-                    <div>
-                        <p style="font-size: 0.7rem; color: #666;">EDICIÓN LIMITADA</p>
-                        <h3 class="product-name">Kuro-01 Oversize</h3>
-                    </div>
-                    <p class="product-price">Gs. 145.000</p>
+                    <h3>MOONKAT TRIBAL TEE</h3>
+                    <p style="color: #666;">220g Heavy Cotton / Oversized Fit</p>
+                    <div class="price">Gs. 180.000</div>
+                    <a href="https://wa.me/595986350385?text=Deseo%20la%20remara%20Tribal%20Tee" class="btn-buy">Añadir</a>
                 </div>
-                <a href="https://wa.me/595986350385?text=Deseo%20adquirir%20Kuro-01" style="font-size: 0.6rem; color: var(--primary-red); text-decoration: none; letter-spacing: 2px;">ADQUIRIR [↗]</a>
             </div>
 
             <div class="product-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800" alt="Remera Moonkat">
-                </div>
+                <img src="https://i.ibb.co/b38c68/image.jpg" alt="Moonkat Espalda">
                 <div class="product-info">
-                    <div>
-                        <p style="font-size: 0.7rem; color: #666;">NIGHT WEAR</p>
-                        <h3 class="product-name">Kanji Shadow</h3>
-                    </div>
-                    <p class="product-price">Gs. 160.000</p>
+                    <h3>ECLIPSE BACK REAPER</h3>
+                    <p style="color: #666;">Serigrafía de Alta Densidad</p>
+                    <div class="price">Gs. 180.000</div>
+                    <a href="https://wa.me/595986350385?text=Deseo%20la%20remera%20Eclipse%20Back" class="btn-buy">Añadir</a>
                 </div>
-                <a href="https://wa.me/595986350385?text=Deseo%20adquirir%20Kanji%20Shadow" style="font-size: 0.6rem; color: var(--primary-red); text-decoration: none; letter-spacing: 2px;">ADQUIRIR [↗]</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-section" id="sobre-nosotros">
+        <div class="about-container">
+            <h2 style="color: var(--rojo-sangre); letter-spacing: 5px;">SOBRE NOSOTROS</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #eee;">
+                Nacimos en las sombras de la cultura urbana, fusionando el misticismo del este con la agresividad del streetwear moderno. 
+                <strong>Moonkat</strong> no es solo ropa; es una declaración de principios para quienes habitan el lado oculto de la luna.
+            </p>
+            <div class="about-grid">
+                <div class="about-item">
+                    <h4>Diseño de Autor</h4>
+                    <p style="color: #888;">Cada drop es una pieza de colección. Una vez que el eclipse termina y el stock se agota, el diseño no vuelve.</p>
+                </div>
+                <div class="about-item">
+                    <h4>Calidad Blindada</h4>
+                    <p style="color: #888;">Utilizamos textiles de alto gramaje y confección reforzada para que tu armadura dure para siempre.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <section class="info-bar" id="info">
+        <div class="info-box">
+            <h5 style="color: var(--rojo-sangre);">ENVÍOS NACIONALES</h5>
+            <p style="font-size: 0.8rem;">Cobertura total en Paraguay vía encomienda. Delivery en Asunción y alrededores.</p>
+        </div>
+        <div class="info-box">
+            <h5 style="color: var(--rojo-sangre);">MÉTODOS DE PAGO</h5>
+            <p style="font-size: 0.8rem;">Transferencia Bancaria, Giros y Efectivo al recibir.</p>
+        </div>
+        <div class="info-box">
+            <h5 style="color: var(--rojo-sangre);">DROP LIMITADO</h5>
+            <p style="font-size: 0.8rem;">Solo 50 unidades por diseño. Exclusividad garantizada.</p>
+        </div>
+    </section>
+
     <footer>
-        <span class="section-tag">CONTACTO DIRECTO</span>
-        <br>
-        <a href="https://wa.me/595986350385" class="wa-contact">WHATSAPP_LINE</a>
-        <p style="margin-top: 100px; font-size: 0.5rem; letter-spacing: 10px; color: #333;">
-            MOONKAT © 2026 ARCHIVE. ALL RIGHTS RESERVED.
-        </p>
+        MOONKAT PY © 2026 | ASUNCIÓN, PARAGUAY <br>
+        <span style="color: #222; margin-top: 10px; display: block;">THE DARK SIDE OF THE MOON</span>
     </footer>
 
-    <script>
-        // Lógica del cursor personalizado
-        const cursor = document.getElementById('cursor');
-        
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        // Efecto de escala al pasar por links
-        const links = document.querySelectorAll('a, .product-card');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(4)');
-            link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-        });
-    </script>
+    <a href="https://wa.me/595986350385" class="whatsapp-btn" target="_blank">
+        <svg viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
 
 </body>
 </html>
